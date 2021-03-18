@@ -1,3 +1,19 @@
+## To Start
+
+```json
+npm install 
+npm run start
+```
+or
+```json
+yarn install
+yarn start
+```
+
+## Config file
+
+~/config/default.json
+
 ## Routers
 | Routes            | Type    | Query         |  Auth Token | Descriptions                                  |
 | ----------------- | ------- | ------------- | ----------- | --------------------------------------------- |
