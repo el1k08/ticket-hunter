@@ -1,0 +1,26 @@
+{
+  "name": "ticket_hunter",
+  "version": "1.0.0",
+  "description": "Find your best ticket deals",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon .",
+    "start": "node .",
+    "start-server": "node ."
+  },
+  "repository": "https://github.com/el1k08/ticket-hunter.git",
+  "author": "Eli Slavutski",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.0.1",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "5.11.15"
+  }
+}

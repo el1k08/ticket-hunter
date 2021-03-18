@@ -1,0 +1,111 @@
+@link = http://localhost:3002
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDUzMzQzMjMxZjA3NGJhMzI5YjUwZTAiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MTYwNjU1ODh9.qHFnt-SQpSwqfSrZUH3Jt2H4yyX-9t9v5EUAxHrszWg
+
+
+### Creating a new user
+POST {{link}}/api/users
+Content-Type: application/json
+
+{
+  "image": "hello.png",
+  "firstName": "Nik",
+  "lastName": "Shalom",
+  "email": "nik.shalom@gmail.com",
+  "password": "qwerty12345",
+  "role": "ADMIN"
+}
+
+### Authorization
+POST {{link}}/api/auth
+Content-Type: application/json
+
+{
+  "email": "nik.shalom@gmail.com",
+  "password": "qwerty12345"
+}
+
+### Edit user
+PUT {{link}}/api/users/me
+Content-Type: application/json
+x-auth-token: {{token}}
+
+{
+  "image": "hello.png",
+  "firstName": "Israel",
+  "lastName": "Shalom",
+  "email": "nik.shalom@gmail.com",
+  "password": "qwerty12345",
+  "role": "ADMIN"
+}
+
+### Remove user
+DELETE {{link}}/api/users/me
+x-auth-token: {{token}}
+
+
+### Create new flight
+POST {{link}}/api/flights
+Content-Type: application/json
+x-auth-token: {{token}}
+
+{
+    "flightID": "TLVNEWY2021",
+    "direction": {
+        "from": { 
+            "airport": "TLV",
+            "date": 1616065502000
+        },
+        "to": { 
+            "airport": "New York",
+            "date": 1616108702000
+        }
+    },
+    "price": "844",
+    "aircraft": "Boing 777"
+}
+
+### Edit flight
+PUT {{link}}/api/flights/6053345bc064ebba5637fd1f
+Content-Type: application/json
+x-auth-token: {{token}}
+
+{
+    "flightID": "TLVNEWY2021",
+    "direction": {
+        "from": { 
+            "airport": "TLV",
+            "date": 1616065502000
+        },
+        "to": { 
+            "airport": "New York",
+            "date": 1616108702000
+        }
+    },
+    "price": "890",
+    "aircraft": "Boing 648"
+}
+
+### Remove flight
+DELETE {{link}}/api/flights/6053345bc064ebba5637fd1f
+Content-Type: application/json
+x-auth-token: {{token}}
+
+
+### List of all flights
+GET {{link}}/api/flights
+
+### List of flights with the same date
+GET {{link}}/api/flights?date=5653577765765
+
+### List of flights by destination
+GET {{link}}/api/flights?to=TLV
+
+### List of flights by departure
+GET {{link}}/api/flights?from=New York
+
+### List of flights by destination & departure
+GET {{link}}/api/flights?to=TLV&from=New York
+
+### Flight by flightID
+GET {{link}}/api/flights/gr5tfh6ybyf
+

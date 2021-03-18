@@ -1,0 +1,12 @@
+{
+  "server": {
+    "port": 3002
+  },
+  "db": {
+    "url": "localhost",
+    "name": "ticket_hunter",
+    "user": "",
+    "password": ""
+  },
+  "jwtKey": "u5xd;,1+4pHWR5l&k/<C`O'Pc4y&N&%zM:bl6z]5!NcH0r<xokW+X)!BSq@tZWt"
+}
